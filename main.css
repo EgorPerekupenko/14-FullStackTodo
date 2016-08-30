@@ -1,0 +1,317 @@
+body {
+	background-image: url("http://i.imgur.com/H8zwmXg.jpg");
+	background-size: cover;
+}
+ /* My To-Do's header */
+h1 {
+	width: 100%;
+	background-color: #23cf92	;
+	margin: 0 auto;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 50px;
+	text-shadow: 2px 2px rgba(0,0,0, .7);
+	border-bottom: 20px solid #963d97;
+	padding: 10px 0 5px 0;
+}
+
+#my {
+	display: inline;
+}
+
+#todoo{
+	display: inline;
+	padding-left: 10px;
+}
+
+
+/* The form on the left */
+
+#leftSide {
+	color: #57b884;
+	font-weight: bold;
+	font-size: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 90%;
+	margin: 20 auto;
+	background-color: #f9f372;
+	border-radius: 10px;
+	text-align: center;
+}
+
+#inputBox {
+	border-radius: 10px;
+	border: 1px solid white;
+	font-size: 20px;
+	text-shadow: none;
+	width: 80%;
+	height: 40px;
+	line-height: 40px;
+}
+
+label {
+	margin-top: 15px;
+}
+
+#selectBox {
+	border-radius: 10px;
+	font-size: 20px;
+	color: white;
+	width: 80%;
+	height: 40px;
+	line-height: 40px;
+}
+
+#submitButton {
+	margin-top: 30px;
+	width: 80%;
+	font-size: 20px;
+	border-radius: 10px;
+}
+
+/* The table on the right */
+
+#rightSide {
+	margin-top: 50px	;
+}
+
+#sorters {
+	text-align: center;
+}
+
+#priority, #alpha {
+	font-size: 20px;
+	margin-top: 10px;
+	border-radius: 10px;
+}
+
+#checkHere {
+	display: inline;
+}
+
+
+#theNewTask {
+	margin-left: 5px;
+	display: inline;
+}
+
+#editBox {
+	margin-left: 5px;
+	color: #57b884;
+	border-radius: 10px;
+	border: 1px solid white;
+}
+
+.pencil {
+	width: 8%;
+	height: 10%;
+	float: right;
+}
+
+#trashcan {
+	width: 8%;
+	height: 10%;
+	float: right;
+	margin-left: 7px;
+}
+
+/* priority colors */
+
+.green{
+	background-color: #80b72d;
+}
+
+.yellow{
+	background-color: #f9a630;
+}
+
+.red{
+	background-color: #df3f3a;
+}
+
+/*rounded edges on todos in table */
+
+table { 
+    border-collapse: separate; 
+    border-spacing: 0 10px; 
+    margin-top: -10px;	
+}
+td {
+    padding: 10px;
+	color: white;
+	font-size: 20px;
+	border-top: 0px;
+	box-shadow: 5px 5px rgba(0,0,0, .5);
+}
+
+td:first-child {
+    border-radius: 10px;
+}
+
+/* removes the ugly 1px top border I'm guessing bootstrap puts in automatically */
+
+.table > tbody > tr > td {
+	border-top: 0px;
+}
+
+/* many, many media queries time */
+
+@media screen and (min-width: 720px){
+
+	body{
+		font-family: 'Gochi Hand', sans-serif;
+	}
+
+	h1{
+	margin-left: 10px;
+	margin-top: 10px;
+	padding-top: 70px;
+	padding-left: 30px;
+	width:300px;
+	height:300px;
+	color: #57b884;
+	text-shadow: 2px 2px #3c805c;
+	font-size: 75px;
+	transform: rotate(10deg);
+	background-image: url("http://i.imgur.com/rWPgdIP.png");
+	background-color: transparent;
+	background-size: cover;
+	text-align: left;
+	border-bottom: transparent;
+}
+
+#my {
+	display: block;
+}
+
+#todoo {
+	display: block;
+	padding-left: 30px;
+}
+
+#leftSide {
+	margin-top: -330px;
+	margin-left: 300px;
+	width: 450px;
+	height: 450px;
+	padding-top: 100px;
+	padding-left: 100px;
+	text-align: left;
+	color: #57b884;
+	text-shadow: 1px 1px #3c805c;
+	font-size: 25px;
+	background-image: url("http://i.imgur.com/FAeausf.png");
+	background-size: cover;
+	background-color: transparent;
+}
+
+#inputBox {
+	width: 232px;
+}
+
+label {
+	margin-top: 0px;
+}
+
+#selectBox {
+		width: 232px;
+	line-height: 28px;
+	height: 32px;
+}
+
+#submitButton {
+	width: 231px;
+}
+
+#rightSide {
+	margin-top: 2%;
+	margin-left: 10%;
+	margin-right: 0;
+	width: 600px;
+	}
+
+}
+
+@media screen and (min-width: 885px) {
+	h1{
+	margin-left: 5%;
+	transform: rotate(-10deg);
+}
+
+#both {
+	width: 100%;
+}
+
+#leftSide {
+	margin-left: 3%;
+	margin-top: -30px;
+}
+
+#rightSide {
+	margin-top: -230px;
+	margin-left: -2%;
+	width: 400px;
+	}
+
+
+}
+
+@media screen and (min-width: 995px) {
+
+	h1 {
+		margin-left: 11%;
+	}
+
+	#leftSide {
+		margin-left: 9%;
+	}
+
+	#rightSide {
+		margin-left: 2%;
+	}
+
+}
+
+@media screen and (min-width: 1085px) {
+
+	h1 {
+		margin-left: 17%;
+	}
+
+	#leftSide {
+		margin-left: 15%;
+	}
+
+}
+
+@media screen and (min-width: 1200px) {
+
+	h1 {
+		margin-left: 21%;
+	}
+
+	#leftSide {
+		margin-left: 19%;
+	}
+
+}
+
+@media screen and (min-width: 1370px) {
+
+	h1 {
+		margin-left: 23%;
+	}
+
+	#leftSide {
+		margin-left: 21%;
+	}
+
+}
+
+.completed {
+	background-color: #c5ba9e;
+	color: #7a6c5d;
+	text-decoration: line-through;
+}

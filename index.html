@@ -1,0 +1,57 @@
+<DOCTYPE! html>
+    <html ng-app="toDoApp">
+
+    <head>
+        <title>Very Simple To Do App</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link href='https://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="main.css">
+
+        <body ng-controller="toDoController as doTo">
+            <h1><p id="my">My</p><p id="todoo">To-Dos</p></h1>
+            <div id="both" class="container">
+                <div class="row">
+                    <div id="leftSide" class="col-sm-4">
+                        <form name="todoform">
+                            <label>text</label>
+                            <br>
+                            <input id="inputBox" type="text" ng-model="doTo.newtext">
+                            <br>
+                            <label>priority</label>
+                            <br>
+                            <select id="selectBox" ng-init="doTo.selectedOption = doTo.options[0]" ng-model="doTo.selectedOption" ng-options="option.priority for option in doTo.options" ng-class="doTo.selectedOption.value">
+                            </select>
+                            <br>
+                            <button id="submitButton" type="submit" ng-click="doTo.addNewToDo()" href="" class="btn btn-primary">add todo</button>
+                    </div>
+                    </form>
+                    <div id="rightSide" class="col-sm-6">
+                        <div id="sorters">
+                            <a id="priority" ng-click="sortField='number'; reverse = !reverse" href="" class="btn btn-primary">Order by priority</a>
+                            <a id="alpha" ng-click="sortField='newtext'; reverse = !reverse" href="" class="btn btn-primary">Order alphabetically</a>
+                        </div>
+                        <br>
+                        <br>
+                        <table class="table">
+                            <tr ng-class="[todo.value, { 'completed': todo.completed }]" ng-repeat="todo in doTo.todos | orderBy: sortField: reverse">
+                                <td>
+                                    <p id="checkHere">
+                                        <input ng-model="todo.completed" type="checkbox">
+                                    </p>
+                                    <p id="theNewTask" ng-hide="editing">{{todo.newtext}}</p>
+                                    <input ng-blur="doTo.editToDo(todo); editing = !editing" ng-show="editing" ng-model="todo.newtext" id="editBox" type="text">
+                                    <a ng-click="doTo.deleteToDo(todo, $index)" href=""><img id="trashcan" title="delete" src="http://i.imgur.com/KlwtXQC.png"></a>
+                                   
+                                    <a ng-click="doTo.editToDo(todo); editing = !editing"><img class="pencil" title="edit" src="http://i.imgur.com/Nfxj7Lr.png"></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <script src="bower_components/angular/angular.js"></script>
+            <script src="app/app.js"></script>
+            <script src="app/core/vstda.controller.js"></script>
+            <script src="app/core/vstda.factory.js"></script>
+        </body>
